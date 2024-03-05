@@ -20,8 +20,7 @@ const EventsExample: FC = () => {
   const dropHandler = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDrag(false);
-    console.log('drop');
-    
+    console.log("drop");
   };
 
   const leaveHandler = (e: React.DragEvent<HTMLDivElement>) => {
@@ -35,8 +34,13 @@ const EventsExample: FC = () => {
   };
   return (
     <div>
-      <input value={value} onChange={changeHandler} type="text" placeholder="Controllable input..." />
-      <input ref={inputRef} type="text"placeholder="Uncontrollable input..." />
+      <input
+        value={value}
+        onChange={changeHandler}
+        type="text"
+        placeholder="Controllable input..."
+      />
+      <input ref={inputRef} type="text" placeholder="Uncontrollable input..." />
       <button onClick={clickHandler}>ssss</button>
       <div
         onDrag={dragHandler}
@@ -47,7 +51,12 @@ const EventsExample: FC = () => {
         onDrop={dropHandler}
         onDragLeave={leaveHandler}
         onDragOver={dragWithPreventHandler}
-        style={{ width: 200, height: 200, background: isDrag ? "blue" : "red", marginTop: 15 }}
+        style={{
+          width: 200,
+          height: 200,
+          background: isDrag ? "blue" : "red",
+          marginTop: 15,
+        }}
       ></div>
     </div>
   );
